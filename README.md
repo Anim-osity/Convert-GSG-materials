@@ -24,6 +24,6 @@ Suppose we have a folder with all our materials that has a structure like this l
 
 ![image](https://cdn.discordapp.com/attachments/734616060611002379/1178109715750862858/image.png?ex=6574f32c&is=65627e2c&hm=15ec3c21d7ea1dbe4cc61c4d8f026d70fe40fb08857f70ab84972eeaf11b0f1b&)
 
-Each folder has 10-70 subfolders of materials. Instead of entering each folder individually, you can enter the main folder that encompasses all of them which will be recursively searched. In this case "E:\GSG_March2023_Update\materials" from the example above will give the following output and generate `.gsgm` files all 272 materials: 
+Each folder has 10-70 subfolders of materials. Instead of entering each folder individually, you can enter the main folder that encompasses all of them which will be recursively searched. In this case "E:\GSG_March2023_Update\materials" from the example above will give the following output and generate `.gsgm` files for all 272 materials: 
 
 ![image](https://cdn.discordapp.com/attachments/734616060611002379/1178127424769241158/image.png?ex=657503aa&is=65628eaa&hm=082f76d2b45e495561b95e1e843dde5fdcdc63762e997aab3d889e6db1365b4b&)
