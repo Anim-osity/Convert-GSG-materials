@@ -25,10 +25,10 @@ def process_folder(folder_path):
     raw_name = '_'.join(re.findall('[A-Z][a-z0-9]*', parts[-1]))
 
     # Check if the name has been used before
-    name = raw_name
+    name = folder_name.replace('GSG_', '', 1)  # Removing only the first occurrence of "GSG_"
     count = 2
     while name in used_names:
-        name = f"{raw_name}_{count}"
+        name = f"{raw_name}_{count}"  # Ensure uniqueness without "GSG_"
         count += 1
 
     used_names.add(name)
@@ -44,8 +44,8 @@ def process_folder(folder_path):
         "res": ""
     }
 
-    # Write dictionary to .gsgm file using folder name
-    output_file_path = os.path.join(folder_path, f"{folder_name}.gsgm")
+    # Write dictionary to .gsgm file using folder name without "GSG_"
+    output_file_path = os.path.join(folder_path, f"{name}.gsgm")
     with open(output_file_path, 'w') as file:
         json.dump(material_dict, file, indent=2)
 
