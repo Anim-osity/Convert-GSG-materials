@@ -44,8 +44,8 @@ def process_folder(folder_path):
         "res": ""
     }
 
-    # Write dictionary to .gsgm file
-    output_file_path = os.path.join(folder_path, f"{name}.gsgm")
+    # Write dictionary to .gsgm file using folder name
+    output_file_path = os.path.join(folder_path, f"{folder_name}.gsgm")
     with open(output_file_path, 'w') as file:
         json.dump(material_dict, file, indent=2)
 
