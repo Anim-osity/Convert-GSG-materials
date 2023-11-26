@@ -4,10 +4,10 @@
 This Python script automates the creation of `.gsgm` data files for GSG materials so that they can be detected and imported by GSG's Houdini and Blender importer addons. It recursively processes directories and their subdirectories, using information from folder names to generate `.gsgm` files.
 
 ## Usage
-4. Follow the prompt:
+1. Follow the prompt:
    - Enter the directory path to the materials.
    - Input `(x)` to exit the prompt loop.
-5. The script will generate `.gsgm` data files for the materials.
+2. The script will generate `.gsgm` data files for the materials.
 
 ### Folder Structure
 The script expects a specific folder structure:
