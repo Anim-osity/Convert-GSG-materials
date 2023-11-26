@@ -10,7 +10,7 @@ This Python script automates the creation of `.gsgm` data files for GSG material
 2. The script will generate `.gsgm` data files for the materials.
 
 ### Notes
-- `.gsgm` files will be created based on the folder name information.
+- `.gsgm` files will be created based on the material's folder name information. Examples: `GSG_MC028_A001_Fabric` , `Blob_Marble`.
 - Existing `.gsgm` files in the specified directories will have their contents overwritten and updated.
 
 ## Example
