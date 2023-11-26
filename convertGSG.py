@@ -15,14 +15,19 @@ def process_folder(folder_path):
     # Extract information from folder name
     folder_name = os.path.basename(folder_path)
 
-    # Check if the folder name has more than 2 underscores and contains an image file
-    if folder_name.count('_') < 2 or not has_image_file(folder_path):
+    # Check if the folder name contains an underscore and contains an image file
+    if '_' not in folder_name or not has_image_file(folder_path):
         return 0
 
     parts = folder_name.split('_')
-    product_code = parts[1]
-    asset_code = parts[2]
-    raw_name = '_'.join(re.findall('[A-Z][a-z0-9]*', parts[-1]))
+    if len(parts) == 2:
+        product_code = parts[0]
+        asset_code = parts[1]
+        raw_name = folder_name.replace('_', ' ')  # Replace underscores with spaces for the name
+    else:
+        product_code = folder_name.split('_')[0]
+        asset_code = folder_name.split('_')[-1]
+        raw_name = folder_name.replace('_', ' ')  # Replace underscores with spaces for the name
 
     # Check if the name has been used before
     name = folder_name.replace('GSG_', '', 1)  # Removing only the first occurrence of "GSG_"
