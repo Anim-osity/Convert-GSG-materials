@@ -9,15 +9,9 @@ This Python script automates the creation of `.gsgm` data files for GSG material
    - Input `(x)` to exit the prompt loop.
 2. The script will generate `.gsgm` data files for the materials.
 
-### Folder Structure
-The script expects a specific folder structure:
-- Each subdirectory should start with "gsg".
-- The format should match: `GSG_productCode_assetCode_name`, which should be the default format whenever you download the materials. Example: `GSG_MC027_A001_Plastic`
-
 ### Notes
-- Directories that don't match the expected structure will be ignored.
 - `.gsgm` files will be created based on the folder name information.
-- Existing `.gsgm` files in the specified directories will have their contents cleared before generating new content.
+- Existing `.gsgm` files in the specified directories will have their contents overwritten and updated.
 
 ## Example
 Suppose we have a folder with all our materials that has a structure like this located at "E:\GSG_March2023_Update\materials":
