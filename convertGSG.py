@@ -7,12 +7,12 @@ used_names = set()
 def process_folder(folder_path):
     # Extract information from folder name
     folder_name = os.path.basename(folder_path)
-    parts = re.split('_', folder_name)
 
-    # Check if the folder name structure is as expected
-    if len(parts) < 3:
+    # Check if the folder name has more than 2 underscores
+    if folder_name.count('_') < 2:
         return 0
 
+    parts = folder_name.split('_')
     product_code = parts[1]
     asset_code = parts[2]
     raw_name = '_'.join(re.findall('[A-Z][a-z0-9]*', parts[-1]))
@@ -39,10 +39,6 @@ def process_folder(folder_path):
 
     # Write dictionary to .gsgm file
     output_file_path = os.path.join(folder_path, f"{name}.gsgm")
-    if os.path.exists(output_file_path):
-        # If file exists, delete its contents
-        open(output_file_path, 'w').close()
-
     with open(output_file_path, 'w') as file:
         json.dump(material_dict, file, indent=2)
 
@@ -56,12 +52,17 @@ def process_directory(directory_path):
 
     # Process each subdirectory
     for subdirectory in subdirectories:
-        if subdirectory.lower().startswith("gsg"):
-            subdirectory_path = os.path.join(directory_path, subdirectory)
-            gsgm_count += process_folder(subdirectory_path)
+        subdirectory_path = os.path.join(directory_path, subdirectory)
+        gsgm_count += process_folder(subdirectory_path)
 
-            # Recursively process subdirectories
-            gsgm_count += process_directory(subdirectory_path)
+        # Recursively process subdirectories
+        gsgm_count += process_directory(subdirectory_path)
+
+    # Delete .gsgm files without characters before the suffix
+    for root, dirs, files in os.walk(directory_path):
+        for file in files:
+            if file.endswith(".gsgm") and len(file.split('.')[0]) == 0:
+                os.remove(os.path.join(root, file))
 
     print(f"{gsgm_count} .gsgm files created in {os.path.basename(directory_path)}")
     return gsgm_count
