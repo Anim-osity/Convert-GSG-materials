@@ -12,7 +12,7 @@ This Python script automates the creation of `.gsgm` data files for GSG material
 ### Folder Structure
 The script expects a specific folder structure:
 - Each subdirectory should start with "gsg".
-- The format should match: `some_prefix_productCode_assetCode_name`, which should be the default format whenever you download the materials. Example: `GSG_MC027_A001_Plastic`
+- The format should match: `GSG_productCode_assetCode_name`, which should be the default format whenever you download the materials. Example: `GSG_MC027_A001_Plastic`
 
 ### Notes
 - Directories that don't match the expected structure will be ignored.
