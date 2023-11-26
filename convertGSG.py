@@ -4,12 +4,19 @@ import json
 
 used_names = set()
 
+def has_image_file(folder_path):
+    # Check if the folder contains a .png or .jpg file
+    for file in os.listdir(folder_path):
+        if file.lower().endswith(('.png', '.jpg')):
+            return True
+    return False
+
 def process_folder(folder_path):
     # Extract information from folder name
     folder_name = os.path.basename(folder_path)
 
-    # Check if the folder name has more than 2 underscores
-    if folder_name.count('_') < 2:
+    # Check if the folder name has more than 2 underscores and contains an image file
+    if folder_name.count('_') < 2 or not has_image_file(folder_path):
         return 0
 
     parts = folder_name.split('_')
