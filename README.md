@@ -21,3 +21,7 @@ Suppose we have a folder with all our materials that has a structure like this l
 Each folder has 10-70 subfolders of materials. Instead of entering each folder individually, you can enter the main folder that encompasses all of them which will be recursively searched. In this case "E:\GSG_March2023_Update\materials" from the example above will give the following output and generate `.gsgm` files for all 272 materials: 
 
 ![image](https://cdn.discordapp.com/attachments/734616060611002379/1178127424769241158/image.png?ex=657503aa&is=65628eaa&hm=082f76d2b45e495561b95e1e843dde5fdcdc63762e997aab3d889e6db1365b4b&)
+
+Example of the materials being imported and detected by GSG's Houdini material importer:
+
+![image](https://cdn.discordapp.com/attachments/734616060611002379/1178440456024105000/image.png?ex=65762733&is=6563b233&hm=9d11c4edefefa4792fddae1d04f1d4434d5676930566c612b24e6115bced364d&)
