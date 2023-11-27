@@ -7,7 +7,7 @@ used_names = set()
 def has_image_file(folder_path):
     # Check if the folder contains a .png or .jpg file
     for file in os.listdir(folder_path):
-        if file.lower().endswith(('.png', '.jpg')):
+        if file.lower().endswith(('.png', '.jpg', '.tif')):
             return True
     return False
 
